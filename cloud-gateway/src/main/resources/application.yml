@@ -1,0 +1,75 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: cloud-gateway
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    gateway:
+      # automated routing start #
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      # automated routing end #
+      # manual routing start #
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+            - Path=/customer/**
+          filters:
+            - AuthenticationFilter
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/account/**
+          filters:
+            - AuthenticationFilter
+        - id: fund-transfer-service
+          uri: lb://fund-transfer-service
+          predicates:
+            - Path=/fund/**
+          filters:
+            - AuthenticationFilter
+        - id: loan-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loan/**
+          filters:
+            - AuthenticationFilter
+        - id: payment-service
+          uri: lb://loan-service
+          predicates:
+            - Path=/loan/**
+          filters:
+            - AuthenticationFilter
+      # manual routing end #
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+
+

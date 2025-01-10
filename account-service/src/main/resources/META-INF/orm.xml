@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+                                     http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+                 version="2.1">
+
+    <named-native-query name="AccountEntity.getAccountByCustomerId">
+        <query>
+            SELECT
+            A.Account_Holder_Name AS AccountHolderName,
+            Account_Number AS AccountNumber,
+            Account_Balance AS Account_Balance,
+            Account_Type AS Account_Type,
+            Account_Status AS Account_Status,
+            PAN_NUMBER AS PAN_NUMBER
+            FROM TB_Account_Details A
+            WHERE A.CUSTOMER_ID = :customerId
+            AND A.ACCOUNT_TYPE = :accountType
+        </query>
+    </named-native-query>
+
+    <named-native-query name="AccountEntity.getAccountBalanceByCustomerId">
+        <query>
+            SELECT
+            A.Account_Holder_Name AS AccountHolderName,
+            Account_Number AS AccountNumber,
+            Account_Balance AS Account_Balance,
+            PAN_NUMBER AS PAN_NUMBER,
+            Account_Type AS Account_Type,
+            Account_Status AS Account_Status
+            FROM TB_Account_Details A
+            WHERE A.CUSTOMER_ID = :customerId
+            AND A.ACCOUNT_NUMBER = :accountNumber
+        </query>
+    </named-native-query>
+
+</entity-mappings>

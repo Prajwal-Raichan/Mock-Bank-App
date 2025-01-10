@@ -1,0 +1,81 @@
+spring:
+  application:
+    name: account-service
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      fail-fast: true
+      loadbalancer:
+        enabled: true
+      retry:
+        initialInterval: 1000
+        maxAttempts: 10000
+        multiplier: 1.5
+
+  datasource:
+    #initialization-mode: always
+    url: jdbc:mysql://localhost:3306/merin-account-service
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+    open-in-view: true
+
+server:
+  port: 8585
+
+springdoc:
+  packagesToScan: com.merin.accountService
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+  show-actuator: true
+
+mbms:
+  openapi:
+    dev-url: http://localhost:8585
+    prod-url: https://localhost:8585
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.merin.accountService: TRACE
+#  file:
+#    name: Global-Logs/account-service.log
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+

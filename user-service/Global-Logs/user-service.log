@@ -1,0 +1,75 @@
+2025-01-01T17:22:57.354+05:30  INFO 25564 --- [user-service] [main] c.m.u.UserServiceApplicationTests        : Starting UserServiceApplicationTests using Java 17.0.12 with PID 25564 (started by prajw in D:\CompanyPortal\Virtusa\Training\Citi-Training\Workstation\Capstone\user-service)
+2025-01-01T17:22:57.356+05:30 DEBUG 25564 --- [user-service] [main] c.m.u.UserServiceApplicationTests        : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-01T17:22:57.357+05:30  INFO 25564 --- [user-service] [main] c.m.u.UserServiceApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2025-01-01T17:22:57.394+05:30  INFO 25564 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888/
+2025-01-01T17:22:57.395+05:30  INFO 25564 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=86c2218799c8708e7e5956a1bfdc2999ec56f8b6, state=
+2025-01-01T17:22:57.395+05:30  INFO 25564 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-01-01T17:22:57.396+05:30  INFO 25564 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=86c2218799c8708e7e5956a1bfdc2999ec56f8b6, state=
+2025-01-01T17:22:58.825+05:30  INFO 25564 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-01T17:22:59.032+05:30  INFO 25564 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 188 ms. Found 2 JPA repository interfaces.
+2025-01-01T17:22:59.436+05:30  INFO 25564 --- [user-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f3637d1d-1457-3917-8b4f-523edf7219f8
+2025-01-01T17:23:00.124+05:30  INFO 25564 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-01T17:23:00.240+05:30  INFO 25564 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-01T17:23:00.289+05:30  INFO 25564 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-01T17:23:00.557+05:30  INFO 25564 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-01T17:23:00.607+05:30  INFO 25564 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-01T17:23:00.883+05:30  INFO 25564 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b60be3
+2025-01-01T17:23:00.885+05:30  INFO 25564 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-01T17:23:00.936+05:30  WARN 25564 --- [user-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-01T17:23:00.966+05:30  INFO 25564 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.31
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-01T17:23:01.955+05:30  INFO 25564 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transactionEntity.jta.platform' to enable JTA platform integration)
+2025-01-01T17:23:02.032+05:30  INFO 25564 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-01T17:23:04.368+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2025-01-01T17:23:04.369+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2025-01-01T17:23:04.370+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2025-01-01T17:23:04.370+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2025-01-01T17:23:04.370+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-01-01T17:23:04.370+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2025-01-01T17:23:04.372+05:30  INFO 25564 --- [user-service] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-01-01T17:23:05.393+05:30  INFO 25564 --- [user-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-01T17:23:05.844+05:30  INFO 25564 --- [user-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-01-01T17:23:05.902+05:30  WARN 25564 --- [user-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-01T17:23:05.996+05:30  INFO 25564 --- [user-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-01-01T17:23:06.022+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-01-01T17:23:06.025+05:30  INFO 25564 --- [user-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-01-01T17:23:06.032+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-01-01T17:23:06.032+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-01-01T17:23:06.032+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-01-01T17:23:06.032+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-01-01T17:23:06.032+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-01-01T17:23:06.033+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-01-01T17:23:06.033+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-01-01T17:23:06.074+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-01-01T17:23:06.076+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-01-01T17:23:06.079+05:30  INFO 25564 --- [user-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-01-01T17:23:06.080+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1735732386080 with initial instances count: 6
+2025-01-01T17:23:06.086+05:30  INFO 25564 --- [user-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2025-01-01T17:23:06.087+05:30  INFO 25564 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1735732386087, current=UP, previous=STARTING]
+2025-01-01T17:23:06.089+05:30  INFO 25564 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/DESKTOP-F4DE96A:user-service:8484: registering service...
+2025-01-01T17:23:06.130+05:30  INFO 25564 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/DESKTOP-F4DE96A:user-service:8484 - registration status: 204
+2025-01-01T17:23:06.139+05:30  INFO 25564 --- [user-service] [main] c.m.u.UserServiceApplicationTests        : Started UserServiceApplicationTests in 11.734 seconds (process running for 13.486)
+2025-01-01T17:23:06.740+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
+2025-01-01T17:23:06.740+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1735732386740, current=DOWN, previous=UP]
+2025-01-01T17:23:06.741+05:30  INFO 25564 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/DESKTOP-F4DE96A:user-service:8484: registering service...
+2025-01-01T17:23:06.744+05:30  INFO 25564 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/DESKTOP-F4DE96A:user-service:8484 - registration status: 204
+2025-01-01T17:23:06.761+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-01T17:23:06.763+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-01T17:23:06.778+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-01T17:23:06.778+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-01-01T17:23:09.781+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-01-01T17:23:09.798+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/DESKTOP-F4DE96A:user-service:8484 - deregister  status: 200
+2025-01-01T17:23:09.799+05:30  INFO 25564 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

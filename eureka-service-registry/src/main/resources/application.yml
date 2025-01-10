@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-service-registry
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.mbms.eurekaServiceRegistry: TRACE
+  file:
+    name: Global-Logs/eureka-service-registry.log
+
+

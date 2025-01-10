@@ -1,0 +1,79 @@
+spring:
+  application:
+    name: fund-transfer-service
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      fail-fast: true
+      retry:
+        initialInterval: 1000
+        maxAttempts: 10000
+        multiplier: 1.5
+
+  datasource:
+    #initialization-mode: always
+    url: jdbc:mysql://localhost:3306/merin-fund-transfer-service
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+    open-in-view: true
+
+server:
+  port: 8787
+
+springdoc:
+  packagesToScan: com.merin.fundTransferService, com.merin.fundTransferService.controller
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+  show-actuator: true
+
+mbms:
+  openapi:
+    dev-url: http://localhost:8484
+    prod-url: https://localhost:8484
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.merin.fundTransferService: TRACE
+#  file:
+#    name: Global-Logs/fund-transfer-service.log
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    show-details: always
+
