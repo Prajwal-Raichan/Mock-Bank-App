@@ -1,5 +1,6 @@
 package com.merin.userService.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,6 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "User_Id")
+    @JsonIgnore
     private int userId;
 
     @Column(name = "Username",unique = true)

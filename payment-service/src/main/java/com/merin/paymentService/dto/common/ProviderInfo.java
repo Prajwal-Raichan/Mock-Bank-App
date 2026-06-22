@@ -1,4 +1,4 @@
-package com.merin.accountService.dto.common;
+package com.merin.paymentService.dto.common;
 
 import lombok.*;
 
@@ -12,7 +12,7 @@ public class ProviderInfo {
 
     private String detail;
 
-    private String fieldId;
+    private String fiedlId;
 
     private String code;
 }

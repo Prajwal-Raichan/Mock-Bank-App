@@ -30,8 +30,8 @@ public class AuthConfig {
             "/user/register",
             "/user/validate-otp",
             "/auth/token",
-//            "/customer/**",
-            "/swagger-ui/**"
+            "/customer/**"
+           // "/swagger-ui/**"
     };
 
     @Bean
@@ -41,7 +41,7 @@ public class AuthConfig {
                 authorizeHttpRequests(request -> request
                         .requestMatchers(permittedUrls).permitAll()
                         .anyRequest().authenticated())
-                // .httpBasic(Customizer.withDefaults())
+                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
     }

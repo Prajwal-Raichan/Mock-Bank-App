@@ -19,34 +19,45 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/user/**
-            - Path=/customer/**
+            - Path=/user/**, /customer/**
           filters:
-            - AuthenticationFilter
+            - name: AuthenticationFilter
+            - name: CircuitBreaker
+              args:
+                name: user-service
+                fallbackUri: forward:/fallback/userServiceFallback
+
         - id: account-service
           uri: lb://account-service
           predicates:
             - Path=/account/**
           filters:
-            - AuthenticationFilter
+            - name: AuthenticationFilter
+            - name: CircuitBreaker
+              args:
+                name: account-service
+                fallbackUri: forward:/fallback/accountServiceFallback
+
         - id: fund-transfer-service
           uri: lb://fund-transfer-service
           predicates:
-            - Path=/fund/**
+            - Path=/fund-transfer-service/**
           filters:
-            - AuthenticationFilter
+            - name: AuthenticationFilter
+
         - id: loan-service
           uri: lb://loan-service
           predicates:
             - Path=/loan/**
           filters:
-            - AuthenticationFilter
+            - name: AuthenticationFilter
+
         - id: payment-service
           uri: lb://loan-service
           predicates:
             - Path=/loan/**
           filters:
-            - AuthenticationFilter
+            - name: AuthenticationFilter
       # manual routing end #
 
 eureka:
@@ -72,4 +83,31 @@ management:
   health:
     show-details: always
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      user-service:
+        register-health-indicator: true
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10000 # 10 seconds
+        permitted-number-of-calls-in-half-open-state: 3
+      account-service:
+        register-health-indicator: true
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10000 # 10 seconds
+        permitted-number-of-calls-in-half-open-state: 3
+        record-exceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.net.ConnectException
+        ignore-exceptions:
+            - java.lang.IllegalArgumentException
+
+logging:
+  level:
+    root: info
+    com.merin.cloudGateway: TRACE
 

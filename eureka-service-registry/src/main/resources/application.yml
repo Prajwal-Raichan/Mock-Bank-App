@@ -7,15 +7,24 @@ spring:
 
 eureka:
   client:
+    # For a standalone Eureka server, it should NOT try to register with itself.
+    # Register-with-eureka=true can cause odd behavior; set to false for the server.
     register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:${server.port}/eureka/
 
+# Expose actuator mappings so you can inspect registered controller mappings at runtime
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,mappings
+
 logging:
   level:
     root: INFO
-    com.mbms.eurekaServiceRegistry: TRACE
+    com.merin.eurekaServiceRegistry: TRACE
   file:
     name: Global-Logs/eureka-service-registry.log
 

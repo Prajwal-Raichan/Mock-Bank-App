@@ -24,7 +24,7 @@ public class AccountController {
 
 
     @PostMapping("/createAccount")
-    public <T> ResponseEntity<T> addNewAccount(@RequestBody AccountEntity accountEntityRequest,
+    public <T>  ResponseEntity<T>addNewAccount(@RequestBody AccountEntity accountEntityRequest,
                                                @RequestParam("customerId") int customerId,
                                                @RequestParam(name = "accountType",defaultValue = "savings") String accountType,
                                                @RequestParam("accountOpenBalance") double accountOpenBalance) {

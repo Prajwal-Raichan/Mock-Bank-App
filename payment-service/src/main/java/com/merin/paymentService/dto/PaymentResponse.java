@@ -3,6 +3,7 @@ package com.merin.paymentService.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.merin.paymentService.Confirmation;
+import com.merin.paymentService.dto.common.ProviderInfo;
 import com.merin.paymentService.entity.Card;
 import com.merin.paymentService.entity.NetBanking;
 import com.merin.paymentService.entity.Upi;
@@ -14,6 +15,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -47,4 +49,6 @@ public class PaymentResponse {
     private NetBanking netBanking;
 
     private String responseMessage;
+
+    private List<ProviderInfo> providerInfo;
 }
